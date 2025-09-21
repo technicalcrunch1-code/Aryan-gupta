@@ -1,56 +1,56 @@
 
 ferry_counter = 0
 
-class BookingSystem():
-    def __init__(self, name,id,number):
-        global ferry_counter
-        ferry_counter = ferry_counter + 1
-    
-        self.ferry_id = ferry_counter + 1
+class BookingSystem():  # Global counter to keep track of how many bookings have been created
+    def __init__(self, name,id,number):# Define a class to represent the ferry booking system
+        global ferry_counter  # Use the global variable ferry_counter inside this method
+        ferry_counter = ferry_counter + 1 
+        self.ferry_id = ferry_counter + 1 # Assign a unique ferry ID to this booking
         self.staff_name = name
         self.staff_id = id
         self.number = number
-        self.item = []
+        self.item = []  # Start with an empty list for booking items
         self.total = 0
-        self.status = "Approved"
+        self.status = "Approved" # Default status of the booking is set as Approved
 
 
-    def coustumer_info(self):
-        print("\n costumer information")
+    def coustumer_info(self):# Method to display customer information
+        print("\n costumer information") # Print heading
 
         print(f"staff_name:{self.name}")
-        print(f"staff_id:{self.staff_id}")
+        print(f"staff_id:{self.staff_id}") # Reset the item list each time this runs
+
         print(f"number:{self.number}")
         
     
-    def  ferry_service_details(self):
+    def  ferry_service_details(self): # Method to input items and calculate total fare
 
         print("\nEnter your req items (type 'done' to finish):")
         self.item = []
         self.total = 0
 
-        while True:
-            item = input("Item name (or type 'done' to finish): ")
+        while True: # Start a loop to keep asking for items
+            item = input("Item name (or type 'done' to finish): ") 
 
-            if item.lower() == 'done':
+            if item.lower() == 'done': # If user types 'done', break loop
                 break
             else:
-                price = float(input(f"Enter price for {item}: $"))
+                price = float(input(f"Enter price for {item}: $"))  # Ask user to enter item price
                 self.item.append((item,price))
                 self.total += price
 
-        print(f"\nTotal ferry amount: ${0}")
+        print(f"\nTotal ferry amount: ${0}") should print self.total, not 0
         
 
 
 
-    def booking_approval(self):
+    def booking_approval(self): # Method to update booking status depending on manager’s decision
         if manager_approval == "approved":
-            self.status = "approved"
+            self.status = "approved" # Update status
         elif manager_approval == "pending" :
             self.status = "pending"
         else:
-            manager_approval ="not_approved"
+            manager_approval ="not_approved" # If anything else, set manager_approval to not approved
             self.status = "not_approved"
     
 
@@ -67,16 +67,16 @@ class BookingSystem():
 
 
 
-    def booking_statistic(self, all_req):
+    def booking_statistic(self, all_req): # Method to calculate statistics of all bookings
 
-        for req in all_req:
-            total = len(all_req)
+        for req in all_req: # Loop through all booking requests
+            total = len(all_req) # Count total number of requests
 
             approved = 0
             pending = 0
             not_approved = 0
 
-        if self.status =="approved":
+        if self.status =="approved":  # Check if this booking is approved
             approved = approved + 1
         elif self.status == "pending":
             pending = pending + 1
@@ -119,4 +119,5 @@ req_all.coustumer_info("aryan", 43, "qwe")
 
 
 # BookingSystem.booking_statistic(all_req)
+
 
