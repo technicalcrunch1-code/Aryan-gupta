@@ -5,9 +5,51 @@
 ​The class has a few methods to handle everything:
 ​The coustumer_info method is super basic. It just displays the staff name, ID, and number associated with the booking.
 ​Next up is ferry_service_details. This is where the user can add items and their prices. It's a simple loop that keeps asking for input until the user types "done." As you add stuff, it automatically calculates the total fare.
-​There's also a method for handling booking approval. This lets a manager update the status of the booking to "approved," "pending," or "not approved."
-​To get a full picture, the display_booking_info method prints out a complete summary of everything: staff details, the booking status, all the items requested, and the final total fare.
-​Lastly, I made a booking_statistics method. This one is supposed to look at a whole list of booking objects and spit out the number of approved, pending, and not approved bookings.
-​Basically, every function in the class has a specific job: one creates the booking, another shows the details, one calculates the costs, and others handle approvals and stats. Together, they make a simple system for keeping ferry booking records.
-​Yeah, I know the code has a few bugs, like some variable names are misspelled and I might have missed a parameter or two, but the concept is solid. It’s a good example of how you can use object-oriented programming to model a real-world system like this. It was a decent way to practice Python and get a better handle on how classes work
+
+designed pattren 
+encapsulation - all booking information 
+future extention - in nedw types of booking
+
+K.I.S.S
+this code is written in a simple way so it is easy to read and understand .
+
+d.r.y
+the bookingdetails are stored in one class so the code is not repeated in many places
+
+open/closed principle
+the classs can extended with new booking features without changing the old code.
+
+composition 
+
+the programm use one class with clear methods instead of a big inheritance tree.
+
+single responsibility principle
+each methord has one clear job 
+
+ coustumer_info() shows staff info  
+ ferry_service_details() adds items and total  
+booking_approval() sets the approval status  
+display_booking_info() shows all details  
+booking_statistic() counts approvals
+
+Y.A.G.N.I 
+0nly the needed features are coded. No extra features are added just in case
+
+
+
+integration of Research and Practice
+From research on software design principles 
+encapsulation protects data by keeping it inside the class.  
+SRP and Separation of Concernsmake programs easier to maintain.  
+ocpand yagni encourage flexible code that grows naturally without extra featires.  
+
+conclusion 
+this booking system is a samll project that depicts 
+
+Use ofdesign patterns like Separation of Concerns
+application of design principles like srp, kiss, and ocp
+integration of research and practice, showing how theory i appplied in code  
+
+
+
 
